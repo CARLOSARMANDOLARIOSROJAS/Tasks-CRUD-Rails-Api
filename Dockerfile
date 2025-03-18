@@ -66,6 +66,11 @@ RUN groupadd --system --gid 1000 rails && \
     chown -R rails:rails db log storage tmp
 USER 1000:1000
 
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y \
+    curl libjemalloc2 libvips sqlite3 libyaml-dev libssl-dev libreadline-dev && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
