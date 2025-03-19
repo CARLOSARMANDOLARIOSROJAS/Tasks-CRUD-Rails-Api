@@ -21,7 +21,7 @@ gem "solid_queue"
 gem "solid_cable"
 gem "faker"
 gem 'rack-cors'
-gem 'psych', '~> 5.3'
+gem 'psych', '~> 5.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
